@@ -1,0 +1,19 @@
+name = "bus-tracker-backend"
+main = "src/index.js"
+compatibility_date = "2024-03-01"
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bus-tracker-db"
+database_id = "local-bus-tracker-db-id"
+
+[[durable_objects.bindings]]
+name = "LOCATION_DO"
+class_name = "LocationBroadcaster"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["LocationBroadcaster"]
